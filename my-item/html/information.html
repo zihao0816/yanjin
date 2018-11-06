@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/information.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+			window.onload=function(){
+				shop();
+				function shop(){
+					$(".shop_select").on({
+						click:function(){
+							
+						}
+					})
+				}
+				
+				
+				var box=document.getElementsByTagName('article')[0];
+				var small=byclassName(box,'small_pic')[0];			
+				var mark=byclassName(box,'mark')[0]; 
+				var Float=byclassName(box,"float_layer")[0];
+				var big=byclassName(box,"big_pic")[0];
+				var img=big.getElementsByTagName('img')[0];
+				mark.onmouseenter=function(){	
+					Float.style.display='block';	
+					big.style.display='block';					
+				}
+				mark.onmouseleave=function(){
+					big.style.display='none';	
+					Float.style.display='none';
+				}
+				mark.onmousemove=function(evt){
+					var e=evt||window.event;
+					var left=e.pageX-box.offsetLeft-small.offsetLeft-Float.offsetWidth/2;
+					var top=e.pageY-box.offsetTop-small.offsetTop-Float.offsetHeight/2;
+					if(left<=0){
+						left=0;
+					}else if(left>=mark.offsetWidth-Float.offsetWidth){
+							left=mark.offsetWidth-Float.offsetWidth;
+						}
+					if(top<=0){
+						top=0;
+					}else if(top>=mark.offsetHeight-Float.offsetHeight){
+						
+							top=mark.offsetHeight-Float.offsetHeight;
+						}
+					Float.style.left=left+'px';
+					Float.style.top=top+'px';
+					var px=left/(mark.offsetWidth-Float.offsetWidth);
+					var py=top/(mark.offsetHeight-Float.offsetHeight);
+					img.style.left=-px*(img.offsetWidth-big.offsetWidth)+'px';
+					img.style.top=-py*(img.offsetHeight-big.offsetHeight)+'px';	
+					}
+			function byclassName(obj,className){
+					if(obj.getElementsByClassName){
+						return obj.getElementsByClassName(className)
+					}else{
+						var arr=[];
+						var tong=obj.getElementsByTagName('*');
+						for(var i=0;i<tong.length;i++){
+							if(tong[i].className===className){
+								arr.push(tong[i]);
+							}
+						}
+						return arr;
+					}					
+				}
+		}		
+		</script>
+	</head>
+	
+	<body>
+
+		<div id="top">
+			<div class="top_left">
+				<img src="../img/top2.jpg"/>
+				<a href="">收藏可得网</a>
+				<a href="">您好，欢迎光临可得眼镜网！</a>
+				<a href="html/login.html">登录</a>
+				<a href="html/register.html">[免费注册]</a>				
+			</div>
+			<div class="top_right">
+				<ul class="top_right1">
+					<li><a href="">我的优惠券<span></span></a></li>
+					<li><a href="">我的可得<span></span></a></li>
+					<li><a href="">帮助中心<span></span></a></li>
+					<li><span>|</span><a href="">购物车0件</a></li>
+					<li><a href="">手机版</a></li>
+					<li></span><a href="">客服电话：4006-20-20-20 ( 8:30-23:45 )</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="banner">
+			
+		</div>
+		<header>
+			<div class="header_left"></div>	
+			<div class="header_center">
+					<dl class="header_center1">
+						<dt></dt>
+						<dd>可得海淘</dd>						
+					</dl>
+					<dl class="header_center2">
+						<dt></dt>
+						<dd>连锁门店</dd>						
+					</dl>
+					<dl class="header_center3">
+						<dt></dt>
+						<dd>品牌保证</dd>						
+					</dl>
+					<dl class="header_center4">
+						<dt></dt>
+						<dd>30天退换</dd>						
+					</dl>
+					<dl class="header_center5">
+						<dt></dt>
+						<dd>满80包邮</dd>						
+					</dl>
+					
+			</div>
+			<div class="header_right">
+				<form >
+					<span id="sou_1">|</span>
+					<input type="text" id="tet" placeholder="凝水胶" />
+					<input type="bttton" id="btn" value="搜索"/>
+				</form>
+				<p class="hot">
+					<span>热门搜索:</span>
+					<a href="">实瞳</a>
+					<a href="">茵洛</a>
+					<a href="">卫康</a>
+					<a href="">海昌</a>
+					<a href="">绮芙莉</a>
+				</p>
+			</div>			
+		</header>
+		
+		<section>
+			<div id="nav">
+					<ul >
+						<li>全部商品分类</li>
+						<li><a href="">首页</a></li>
+						<li><a href="">海外购</a></li>
+						<li><a href="">财通</a></li>
+						<li><a href="">隐形眼镜</a></li>
+						<li><a href="">护理用品</a></li>
+						<li><a href="">框架眼镜</a></li>
+						<li><a href="">美妆个户</a></li>
+						<li><a href="">积分商城</a></li>
+					</ul>
+				</div>
+		</section>
+		<!-----------article--------->
+			<nav>
+				<span>当前位置 ></span>
+				<a href="../index.html">可得眼镜网</a>
+				<span>></span>
+				<a href="">透明隐形眼镜</a> 
+				<span>></span>
+				<a href=""> 强生| 舒日</a>
+			</nav>
+		<article>			
+			<div class="art" id="art">
+			<div id="div1" class="d_i_1">
+				<div class="small_pic small_p">
+					<span class="mark mark_1"></span>   <!--遮罩层-->
+					<span class="float_layer"></span>
+					<img src="../img/0d3b1214-0e11-42b2-94ac-f9a0f156be28-400-400.jpg" />
+				</div>
+				<div class="big_pic big_p">
+					<img src="../img/0d3b1214-0e11-42b2-94ac-f9a0f156be28.jpg" />
+				</div>
+			</div>
+			<div class="weixin">
+					<img src="../img/qrcode_115.jpg"/>
+					<p>手机扫购，更方便</p>
+				</div>
+			<div class="art_right">				
+				<div class="details_top_name">
+					<span>强生安视优舒日隐形眼镜日抛30片装</span>
+					<p>轻薄高透氧，持久水润</p>
+				</div>
+				<div class="details_top_message">
+	                <div class="details_top_message_price_cx">
+	                    <div class="d_t_m_p_cx2">1件<br><b>￥208.00/件</b> </div>                                                                 
+	                    <div class="d_t_m_p_cx4"> 2～3件<br><b>￥200.00/件</b></div>
+	                    <div class="d_t_m_p_cx6">4件及以上<br><b>￥189.00/件</b> </div>
+	                </div>    
+					<div class="details_top_message_sales">
+		    			<div class="message_title">促销信息：</div>
+		    			<div class="message_sales">
+		        			<p>
+		            			<b>赠品</b>
+		            			<a href="/huodong597.html" target="_blank" title="">
+		                		<img alt="kindle  sy69jl 全新入门款电子书阅读器(强生可得专用)" src="http://pic.keede.com/main/e760eeae-d625-440f-af28-0b0f8d20df52-130-130.jpg" title="kindle  sy69jl 全新入门款电子书阅读器(强生可得专用)"></a><label>满2999元赠Kindle sy69jl （限赠1）</label>
+		       				</p>       
+		        			<p>
+		            			<b>赠品</b>
+		            			<a href="/huodong598.html" target="_blank" title="">
+		                		<img alt="新版可得刮刮卡" src="http://pic.keede.com/main/da1f1b86-729a-423e-8404-40b6693df3e7-130-130.jpg" title="新版可得刮刮卡"></a><label>购物满100元赠可得刮刮卡（限赠1）</label>
+		       				</p>        
+		        			<p>
+		            			<b>赠品</b>
+		            			<a href="/huodong541.html" target="_blank" title="">
+		                		<img alt="100元咖啡礼卡（可得强生专用）" src="http://pic.keede.com/main/a7597db7-70ea-434c-93e4-4b96cea501d1-130-130.jpg" title="100元咖啡礼卡（可得强生专用）"></a><label>满759元赠100元咖啡礼卡（限赠1）</label>
+		       				</p>       
+		        			<p><b>换购</b><a href="/complete217.html" target="_blank" title=""><img alt="强生全能雅培滋润型隐形眼镜护理液360ml+360ml+100ml" src="http://pic.keede.com/main/3d51e59e-8b0f-4e9d-9319-20f28f1134fa-130-130.jpg" title="强生全能雅培滋润型隐形眼镜护理液360ml+360ml+100ml"></a><label>+62元换购强生全能护理液360*2+100ml</label></p>        
+		        			<p><b>换购</b><a href="/yantie8.html" target="_blank" title=""><img alt="珍视明蒸汽热敷眼罩10片装-洋甘菊" src="http://pic.keede.com/main/522e5fad-8784-4345-800e-cc0c474a85ca-130-130.jpg" title="珍视明蒸汽热敷眼罩10片装-洋甘菊"></a><label>+39.9元换购珍视明蒸汽眼罩</label></p>        
+		        			<p><b>换购</b><a href="/yantie4.html" target="_blank" title=""><img alt="珍视明护眼贴15对装-通用型" src="http://pic.keede.com/main/c04f1387-db9f-414f-85a6-9e2f0f66a904-130-130.jpg" title="珍视明护眼贴15对装-通用型"></a><label>+32.9元换购珍视明眼贴</label></p>       
+		    			</div>
+					</div>
+					<div class="clear"></div>
+					<div class="details_top_message_integral">
+			    		<span class="message_title">商品编号：</span>
+			    		<span class="message_price_save">CL131194</span>
+			    		<span class="message_title message_title_1">库存状况：</span>
+			    		<span class="message_price_save">有库存</span>
+					</div>
+				</div>
+				<div class="shop_cart">
+					<span id="shop_left">属性选择</span>
+					<div class="shop_center">
+						<div class="shop_cleft1">
+							<span>右眼 R</span>
+							<span>光度：</span>
+							<span class="shop_select">请选择</span>
+							<span>数量：</span>
+							<span>-</span>
+							<span>1</span>
+							<span>+</span>
+							<ul>
+								<li>请选择</li>
+								<li>-1.0</li>
+								<li>-1.25</li>
+								<li>-1.50</li>
+								<li>-1.75</li>
+								<li>-2.00</li>
+								<li>-2.2</li>
+								<li>-2.2</li>
+								<li>-1.0</li>
+								<li>-1.25</li>
+								<li>-1.50</li>
+								<li>-1.75</li>
+								<li>-2.00</li>
+								<li>-2.2</li>
+								<li>-2.2</li>
+							</ul>
+								
+						</div>
+						<div class="shop_cleft1">
+							<span>左眼 R</span>
+							<span>光度：</span>
+							<span class="shop_select">请选择</span>
+							<span>数量：</span>
+							<span>-</span>
+							<span>1</span>
+							<span>+</span>
+							<ul>
+								<li>请选择</li>
+								<li>-1.0</li>
+								<li>-1.25</li>
+								<li>-1.50</li>
+								<li>-1.75</li>
+								<li>-2.00</li>
+								<li>-2.2</li>
+								<li>-2.2</li>
+								<li>-1.0</li>
+								<li>-1.25</li>
+								<li>-1.50</li>
+								<li>-1.75</li>
+								<li>-2.00</li>
+								<li>-2.2</li>
+								<li>-2.2</li>
+							</ul>
+						</div>
+						<div class="shop_cbottom">
+							<p>立即购买</p>
+							<p>加入购物车</p>
+						</div>
+					</div>
+					<div class="shop_right">
+						<span>隐形眼镜度数换算表</span>
+						<span>我不会选光度？</span>
+						<span>联系客服获得专业帮助</span>
+					</div>	
+				</div>
+				
+			</div>
+		</div>
+		</article>
+		
+		
+		
+		
+		
+		
+	<!-----------------footer-------------->
+	<div class="wide-Footer_wrap">
+		<div class="wide-Footer">
+		<div class="FT-A">
+        <img src="https://pic.keede.com/Images/index_scb/20180803/nfot-bg-03.gif" alt="">
+        <div class="FTA-02">
+        	<div class="FTA-021">
+            <ul>
+                <h4>关于可得</h4>
+                <li><a href="/help-gywm8.html" rel="nofollow" target="_blank">公司简介</a></li>
+                <li><a href="/help-gywm5.html" rel="nofollow" target="_blank">诚聘英才</a></li>
+                <li><a href="/help-gywm112.html" rel="nofollow" target="_blank">媒体报道</a></li>
+            </ul>
+            <ul>
+                <h4>新手指南</h4>
+                <li><a href="/help-xs35.html" rel="nofollow" target="_blank">热点问题</a></li>
+                <li><a href="/help-xs9.html" rel="nofollow" target="_blank">会员优惠</a></li>
+                <li><a href="/help-liquanshiyong.html" rel="nofollow" target="_blank">礼券号使用</a></li>
+            </ul>
+            <ul>
+                <h4>配镜指南</h4>
+                <li><a href="/help-yanguangdan.html" rel="nofollow" target="_blank">读懂验光单</a></li>
+                <li><a href="/article/txhsyxyj.html" rel="nofollow" target="_blank">如何选购隐形眼镜</a></li>
+                <li><a href="/article" target="_blank">眼镜学堂</a></li>
+            </ul>
+            <ul>
+                <h4>支付配送</h4>
+                <li><a href="/help-yunfeiyunshi.html" rel="nofollow" target="_blank">款到发货</a></li>
+                <!--<li><a href="/help-huodaofukuan.html" rel="nofollow" target="_blank">货到付款</a></li>-->
+                <li><a href="/help-payment21.html" rel="nofollow" target="_blank">支付方式</a></li>
+            </ul>
+            <ul>
+                <h4>售后服务</h4>
+                <li><a href="/help-tuihuanfuwu.html" rel="nofollow" target="_blank">30天随心退换货服务</a></li>
+                <li><a href="/help-tuihuanhtuikuan.html" rel="nofollow" target="_blank">如何办理退换货、退款</a></li>
+                <li><a href="/quaere" rel="nofollow" target="_blank">投诉建议</a></li>
+            </ul>
+            <ul>
+                <h4>帮助</h4>
+                <li><a href="/account/NewFindPw" rel="nofollow" target="_blank">找回密码</a></li>
+                <li><a href="/help-gywm118.html" rel="nofollow" target="_blank">联系我们</a></li>
+                <li><a href="/help-cx.html" rel="nofollow" target="_blank">快递查询</a></li>
+            </ul>
+        	</div>
+        </div>
+        <div class="FTA-03"> 
+        	  <div class="FTA-031"> 
+            <p><a href="http://www.kede.com/" rel="nofollow" target="_blank">上海可得光学科技有限公司</a></p>
+            <a href="/help-gywm118.html" target="_blank" rel="nofollow">联系我们</a>
+            <span>|</span>
+            <a href="#" target="_blank">友情链接</a>
+            <span>|</span>
+            <a href="/article" target="_blank">眼镜百科</a>
+            <span>|</span>
+            <a href="/sitemap.html" target="_blank">网站地图</a>
+            <span>|</span>
+            <a href="/help-anquanyinsi.html" rel="nofollow" target="_blank">隐私安全</a>
+            <p>  
+                Copyright 2006-2018 可得眼镜 KEDE.com 版权所有
+                <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" rel="nofollow" target="_blank">沪ICP备14001373号</a>
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010702003385" rel="nofollow" target="_blank"><img src="https://pic.keede.com/Images/index_scb/20170802/ba.png" alt="">沪公网安备 31010702003385号</a> 全国服务热线：4006-20-20-20
+            </p>
+           </div> 
+        <div class="FTA-04"> 
+            <a href="http://www.315online.com.cn/pingxuan/index.html" rel="nofollow" target="_blank"></a>
+            <a href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=dov71zgzilhvn4inh27pfqd6h0hvwad1qo" rel="nofollow" target="_blank"></a>
+            <a href="/help-gywm8.html#yanjingxiehui" rel="nofollow" target="_blank"></a>
+            <a href="/help-gywm8.html#shanghaimingpai" rel="nofollow" target="_blank"></a>
+        </div>
+    </div>
+	</div>	
+		
+		
+		
+		</div>
+	</body>
+</html>

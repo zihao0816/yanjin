@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.3.js">
+			
+		</script>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			li{
+				list-style: none;
+			}
+			body{
+				background: #CCCCCC;
+			}
+			#box{
+				width: 720px;
+				margin: 50px auto;
+				height: 320px;
+				position:relative;
+
+			}
+			#top{
+				position: relative;
+				height: 320px;
+				
+			}
+			#btn_l{
+				position: absolute;
+				background:#fff;
+				height: 60px;
+				width: 60px;
+				left: -30px;
+				top: 130px;
+				border-radius: 50%;
+				z-index: 1001;
+				
+			}
+			#btn_r{
+				position: absolute;
+				background:#fff;
+				height: 60px;
+				width: 60px;
+				border-radius: 50%;
+				right: -30px;
+				top: 130px;	
+				z-index: 1001;			
+			}
+ .note{
+	width:156px;
+	position:absolute;
+	position:absolute;
+	left:0;
+	right:0;
+	margin:0 auto;
+	bottom:10px;
+}
+.note span{
+	float:left;
+	width:18px;
+	height:18px;
+	border-radius: 50%;
+	background:rgba(0,0,0,1);
+	line-height: 18px;
+	margin-right:8px;
+	text-align: center;
+	color:#fffffa;
+}
+.note .not_b1{
+	background:red;
+}
+ul li{
+	width:720px;
+	height:320px;
+}
+ul li img {
+	position:absolute;
+	display: block;
+	width:720px;
+	height:320px;
+}
+	</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				banner_play();
+			 function banner_play(){				
+				var note_b = document.querySelectorAll('.note span');
+				var oBigBox = document.getElementById("box");
+				var oTop = document.getElementById("top");
+				var left_btn = document.getElementById("btn_l");
+				var right_btn= document.getElementById("btn_r");				//7.获取大图
+				var oBigPic = oTop.getElementsByTagName('li');								
+				oBigPic.onmouseenter = function(){
+					left_btn.style.display = "none";
+					right_btn.style.display = "none";
+				}
+				var indexA = 0;
+				var zIndex = 1;	
+				var timer = null;
+				autoPlay();						
+				var circle = 0;
+				function autoPlay(){
+					timer = setInterval(function(){
+						indexA ++;
+						if(indexA == oBigPic.length){
+							indexA = 0;
+						}
+						for(var i = 0;i <oBigPic.length;i++){
+							oBigPic[i].style.display = "none";
+						}
+					oBigPic[indexA].style.display = "block";	
+
+				circle ++;
+			if(circle > note_b.length-1){
+					circle = 0;
+				}
+				for(var i = 0,len = note_b.length;i < len;i ++){
+					note_b[i].className = '';
+				}
+				note_b[circle].className = "not_b1";
+					},2000)
+					oBigBox.onmouseenter = function(){
+						clearInterval(timer);
+					}
+					oBigBox.onmouseleave = function(){
+						autoPlay();
+					}
+				}
+			}
+		}	 
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul id="top">
+
+				<a href="javascript:;" id="btn_l"></a>
+				<a href="javascript:;" id="btn_r"></a>
+				<li style="background:rgb(228,244,255);position:absolute;"><a href=""><img src="../img/banner_sj.jpg" alt="" /></a></li>
+				<li style="background:rgb(3,41,85);position:absolute;display: none;"><a href=""><img src="../img/banner_032955.jpg" alt="" /></a></li>
+				<li style="background:rgb(196,227,125);position:absolute;display: none;"><a href=""><img src="../img/banner_c4e37d.jpg" alt="" /></a></li>
+				<li style="background:rgb(253,241,253);position:absolute;display: none;"><a href=""><img src="../img/banner_fdf1f3.jpg" alt="" /></a></li>
+				<li style="background:rgb(210,237,255);position:absolute;display: none;"><a href=""><img src="../img/banner_d2edff .jpg" alt="" /></a></li>
+				<li style="background:rgb(216,239,228);position:absolute;display: none;"><a href=""><img src="../img/banner_d8efe4.jpg" alt="" /></a></li>				
+			</ul>
+			<div class="note">
+					<span class="not_b1">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>6</span>
+				</div>
+		</div>
+		
+	</script>
+</html>
+

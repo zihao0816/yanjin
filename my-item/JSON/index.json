@@ -1,0 +1,75 @@
+{
+	"seckill":{
+		"name" : "今日秒杀",
+		"list" :
+			[
+				{
+					"id" : "shop01",
+					"name":"安瞳繁朵月抛2片装",
+					"src" : "ms1.jpg",
+					"price" : "999"
+				},
+				{
+					"id" : "shop01",
+					"name":"安瞳繁朵月抛2片装",
+					"src" : "ms2.jpg",
+					"price" : "999"
+				},
+				{
+					"id" : "shop01",
+					"name":"安瞳繁朵月抛2片装",
+					"src" : "ms3.jpg",
+					"price" : "999"
+				},
+				{
+					"id" : "shop01",
+					"name":"安瞳繁朵月抛2片装",
+					"src" : "ms4.jpg",
+					"price" : "999"
+				},
+				{
+					"id" : "shop01",
+					"name":"安瞳繁朵月抛2片装",
+					"src" : "ms5.jpg",
+					"price" : "999"
+				}
+			]
+		},
+		"seck1":{
+		"name" : "值得买",
+		"list" :
+			[
+				{
+					"id" : "shop01",
+					"name":"博幻眸日抛",
+					"src" : "zhi1.jpg",
+					"price" : "999"
+				},
+				{
+					"id" : "shop01",
+					"name":"博幻眸日抛",
+					"src" : "zd2.jpg",
+					"price" : "999"
+				},
+				{
+					"id" : "shop01",
+					"name":"博幻眸日抛",
+					"src" : "zd3.jpg",
+					"price" : "999"
+				},
+				{
+					"id" : "shop01",
+					"name":"博幻眸日抛",
+					"src" : "zd4.jpg",
+					"price" : "999"
+				},
+				{
+					"id" : "shop01",
+					"name":"博幻眸日抛",
+					"src" : "zd5.jpg",
+					"price" : "999"
+				}
+			]
+		}
+		}
+		

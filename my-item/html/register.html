@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/cookie.js"></script>
+	
+
+	</head>
+	<body>
+		<div id="top">
+			<div class="top_left">
+				<img src="../img/top2.jpg"/>
+				<a href="">收藏可得网</a>
+				<a href="">您好，欢迎光临可得眼镜网！</a>
+				<a href="html/login.html">登录</a>
+				<a href="html/register.html">[免费注册]</a>
+				
+				
+			</div>
+			<div class="top_right">
+				<ul class="top_right1">
+					<li><a href="">我的优惠券<span></span></a></li>
+					<li><a href="">我的可得<span></span></a></li>
+					<li><a href="">帮助中心<span></span></a></li>
+					<li><span>|</span><a href="">购物车0件</a></li>
+					<li><a href="">手机版</a></li>
+					<li></span><a href="">客服电话：4006-20-20-20 ( 8:30-23:45 )</a></li>
+				</ul>
+			</div>
+		</div>
+		<!------------------header--------->
+		<div class="header_wrap">
+		<header>			
+		</header>
+		<!---------------#banner----------->
+		<div class="ban_wrap">
+			<div id="banner">
+				<div class="login">
+					<div class="nav">
+						<p>手机号注册</p>
+						<a href="login.html">已有帐号?去登录<span>&gt;</span></a>
+					</div>	
+					<form action="" id="box1">
+						<p>
+							<input type="text"  id="tet" placeholder="亲输入手机用、户名、邮箱" />
+						</p>
+						<p>
+							<input type="password"  id="pwd" placeholder="请输入密码" />					
+						</p>
+						<input type="button" name="" id="btn" value="立即注册" />
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">		
+	$("#btn").click(function(){	
+		 $tet = $("#tet").val();
+		 $pwd = $("#pwd").val();
+		var value = '{"user":'+ $tet +',"pwd":"'+ $pwd +'"}'
+	 	setCookie($tet,value,30)  ;		
+		window.location = "login.html";
+	})
+</script>
